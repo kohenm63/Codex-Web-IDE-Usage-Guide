@@ -1,1 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Codex Web Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .step {
+            display: none;
+        }
+        .glow-button {
+            box-shadow: 0 0 15px rgba(129, 230, 217, 0.5);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .glow-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(129, 230, 217, 0.7);
+        }
+        .glow-text {
+            text-shadow: 0 0 8px rgba(129, 230, 217, 0.7);
+        }
+        .progress-bar {
+            transition: width 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col items-center justify-center p-4">
+
+    <div class="bg-slate-900 rounded-3xl shadow-xl p-6 sm:p-8 md:p-12 w-full max-w-2xl mx-auto border border-sky-900">
+        <div class="mb-8 w-full bg-slate-800 rounded-full h-2">
+            <div id="progress-bar" class="progress-bar bg-sky-400 h-full rounded-full w-0"></div>
+        </div>
+        
+        <div id="guide-content">
+            <!-- Step 1: Introduction -->
+            <div id="step-1" class="step block text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-sky-400 glow-text">Welcome to the Codex Web IDE</h2>
+                <p class="text-lg text-slate-300">This interactive guide will walk you through the key steps of using the Codex web-based coding environment.</p>
+                <button onclick="revealNextStep()" class="mt-8 px-8 py-4 rounded-full bg-sky-600 hover:bg-sky-700 text-white font-bold transition-transform glow-button">
+                    Start Guide
+                </button>
+            </div>
+
+            <!-- Step 2: Connecting to GitHub -->
+            <div id="step-2" class="step">
+                <h2 class="text-2xl font-bold mb-4 text-sky-400">Step 1: Connecting Your Universe</h2>
+                <p class="text-slate-300 mb-6">Codex operates on your codebase by connecting to your GitHub account. This is the first cosmic link you'll forge.</p>
+                <div class="bg-slate-800 p-6 rounded-2xl border border-sky-800">
+                    <h3 class="font-semibold text-lg mb-2 text-yellow-300">Action:</h3>
+                    <p class="text-slate-300">
+                        Log in to Codex and click the "Connect to GitHub" button. You'll be asked to authorize access to your repositories.
+                    </p>
+                    <p class="text-sm text-slate-400 mt-4 italic">
+                        Imagine a screenshot here: A central "Connect to GitHub" button on a clean, dark interface, with an OpenAI logo nearby.
+                    </p>
+                </div>
+                <button onclick="revealNextStep()" class="mt-8 w-full py-3 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold transition-transform glow-button">
+                    Next Step
+                </button>
+            </div>
+
+            <!-- Step 3: Creating an Environment -->
+            <div id="step-3" class="step">
+                <h2 class="text-2xl font-bold mb-4 text-sky-400">Step 2: Calibrating the Environment</h2>
+                <p class="text-slate-300 mb-6">An "environment" is a self-contained workspace for a single repository. It's where the magic happens.</p>
+                <div class="bg-slate-800 p-6 rounded-2xl border border-sky-800">
+                    <h3 class="font-semibold text-lg mb-2 text-yellow-300">Action:</h3>
+                    <p class="text-slate-300">
+                        Use the dropdown menus to select the specific GitHub repository and branch you want to work on. Then, click the "Create environment" button.
+                    </p>
+                    <p class="text-sm text-slate-400 mt-4 italic">
+                        Imagine a screenshot here: A page with two dropdown menus labeled "Organization" and "Repository," and a final "Create environment" button at the bottom.
+                    </p>
+                </div>
+                <button onclick="revealNextStep()" class="mt-8 w-full py-3 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold transition-transform glow-button">
+                    Next Step
+                </button>
+            </div>
+
+            <!-- Step 4: The Prompt Box -->
+            <div id="step-4" class="step">
+                <h2 class="text-2xl font-bold mb-4 text-sky-400">Step 3: Transmitting Instructions</h2>
+                <p class="text-slate-300 mb-6">The prompt box is your primary interface. Here, you communicate your coding intent in plain language.</p>
+                <div class="bg-slate-800 p-6 rounded-2xl border border-sky-800 space-y-4">
+                    <h3 class="font-semibold text-lg mb-2 text-yellow-300">Action:</h3>
+                    <textarea class="w-full p-3 rounded-lg bg-slate-700 text-slate-100 border border-slate-600" rows="3" placeholder="Describe the task here..."></textarea>
+                    <div class="flex space-x-4">
+                        <button class="flex-1 py-2 rounded-xl bg-slate-700 text-white">Ask</button>
+                        <button class="flex-1 py-2 rounded-xl bg-sky-600 text-white">Code</button>
+                    </div>
+                    <p class="text-sm text-slate-400">Choose **Ask** for explanations and **Code** to generate or modify code.</p>
+                    <p class="text-sm text-slate-400 mt-4 italic">
+                        Imagine a screenshot here: The main Codex interface, with a prominent text box at the bottom and the "Ask" and "Code" buttons next to it.
+                    </p>
+                </div>
+                <button onclick="revealNextStep()" class="mt-8 w-full py-3 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold transition-transform glow-button">
+                    Next Step
+                </button>
+            </div>
+
+            <!-- Step 5: Reviewing Changes -->
+            <div id="step-5" class="step">
+                <h2 class="text-2xl font-bold mb-4 text-sky-400">Step 4: Reviewing the Quantum Change</h2>
+                <p class="text-slate-300 mb-6">Codex will present its proposed changes as a "diff"—a side-by-side comparison of the old and new code.</p>
+                <div class="bg-slate-800 p-6 rounded-2xl border border-sky-800">
+                    <h3 class="font-semibold text-lg mb-2 text-yellow-300">Action:</h3>
+                    <p class="text-slate-300">
+                        Review the generated diffs carefully. Once you're satisfied, click the "Create Pull Request" button to submit the changes to your repository.
+                    </p>
+                    <p class="text-sm text-slate-400 mt-4 italic">
+                        Imagine a screenshot here: A file viewer showing side-by-side code with green highlights for additions and red highlights for deletions. A "Create Pull Request" button is visible in the top right.
+                    </p>
+                </div>
+                <button onclick="revealNextStep()" class="mt-8 w-full py-3 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold transition-transform glow-button">
+                    Continue to Troubleshooting
+                </button>
+            </div>
+
+            <!-- Step 6: Troubleshooting -->
+            <div id="step-6" class="step">
+                <h2 class="text-2xl font-bold mb-4 text-sky-400">Step 5: Overcoming Cosmic Glitches</h2>
+                <p class="text-slate-300 mb-6">Encountering an issue? Here are some common problems and their solutions to help you navigate your journey.</p>
+                <div class="bg-slate-800 p-6 rounded-2xl border border-sky-800">
+                    <ul class="list-disc list-inside space-y-4 text-slate-300">
+                        <li>
+                            <p class="font-bold text-yellow-300">Issue: GitHub connection fails.</p>
+                            <p class="text-sm">Solution: Ensure you have granted the correct repository permissions on GitHub. Try revoking and re-granting access to reset the connection.</p>
+                            <p class="text-xs text-slate-500 mt-1">For more details, watch the <a href="https://www.youtube.com/watch?v=Kd0QGZMy_tA" target="_blank">GitHub Authorization Issues video</a>.</p>
+                        </li>
+                        <li>
+                            <p class="font-bold text-yellow-300">Issue: Environment setup fails.</p>
+                            <p class="text-sm">Solution: Codex runs in a sandboxed environment. This can sometimes fail with complex or non-standard dependencies. Try simplifying your setup or provide a custom setup script in your repository if needed.</p>
+                            <p class="text-xs text-slate-500 mt-1">Learn more from this <a href="https://www.youtube.com/watch?v=dgiBc4-LSrM" target="_blank">Environment Setup Troubleshooting video</a>.</p>
+                        </li>
+                        <li>
+                            <p class="font-bold text-yellow-300">Issue: Codex-generated code is incorrect or doesn't work.</p>
+                            <p class="text-sm">Solution: This is not an oracle. Review the logs and diffs to understand the agent's thought process. Refine your prompt by being more specific, providing more context, or breaking down the task into smaller steps.</p>
+                            <p class="text-xs text-slate-500 mt-1">See how to debug a real codebase in this <a href="https://www.youtube.com/watch?v=Pkp1MRFGUVo" target="_blank">AI Debugging Demonstration video</a>.</p>
+                        </li>
+                        <li>
+                            <p class="font-bold text-yellow-300">Issue: "Failed to create task" error.</p>
+                            <p class="text-sm">Solution: This is often a temporary issue with the server. If it persists, try deleting and recreating the environment, or ensure your repository is not empty by adding a `README.md` file.</p>
+                            <p class="text-xs text-slate-500 mt-1">For more on this, check out this <a href="https://www.youtube.com/watch?v=WvMqA4Xwx_k" target="_blank">Build Hour video</a>.</p>
+                        </li>
+                        <li>
+                            <p class="font-bold text-yellow-300">Issue: "Binary files are not supported" error during PR creation.</p>
+                            <p class="text-sm">Solution: Codex may be trying to commit a binary file (like a `.pyc` or `.sqlite` file). You will need to manually remove this file from the PR and add it to your `.gitignore` file to prevent future issues.</p>
+                            <p class="text-xs text-slate-500 mt-1">Find a workaround for this error in this <a href="https://www.youtube.com/shorts/qrdvEmzt5c0" target="_blank">troubleshooting video</a>.</p>
+                        </li>
+                    </ul>
+                </div>
+                <button onclick="revealNextStep()" class="mt-8 w-full py-3 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold transition-transform glow-button">
+                    Finalize
+                </button>
+            </div>
+            
+            <!-- Completion Message -->
+            <div id="completion-message" class="hidden text-center">
+                <h2 class="text-3xl font-bold mb-4 text-green-400 glow-text">Guide Complete!</h2>
+                <p class="text-lg text-slate-300">
+                    You have successfully navigated the Codex Web IDE. Begin your own coding missions.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 6;
+
+        function updateProgressBar() {
+            const progressBar = document.getElementById('progress-bar');
+            const progress = (currentStep - 1) / (totalSteps - 1) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        function revealNextStep() {
+            const currentStepElement = document.getElementById(`step-${currentStep}`);
+            if (currentStepElement) {
+                currentStepElement.style.display = 'none';
+            }
+
+            currentStep++;
+
+            if (currentStep <= totalSteps) {
+                const nextStepElement = document.getElementById(`step-${currentStep}`);
+                if (nextStepElement) {
+                    nextStepElement.style.display = 'block';
+                }
+            } else {
+                const completionMessage = document.getElementById('completion-message');
+                if (completionMessage) {
+                    completionMessage.style.display = 'block';
+                }
+            }
+            updateProgressBar();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateProgressBar();
+        });
+    </script>
+</body>
+</html>
 
