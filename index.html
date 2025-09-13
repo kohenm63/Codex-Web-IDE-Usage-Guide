@@ -34,7 +34,7 @@
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col items-center justify-center p-4">
 
     <div class="bg-slate-900 rounded-3xl shadow-xl p-6 sm:p-8 md:p-12 w-full max-w-2xl mx-auto border border-sky-900">
-        <div class="mb-8 w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+        <div id="progress-container" class="mb-8 w-full bg-slate-800 rounded-full h-2 overflow-hidden">
             <div id="progress-bar" class="progress-bar bg-sky-400 h-full rounded-full w-0 max-w-full"></div>
         </div>
         
@@ -177,7 +177,7 @@
 
         function updateProgressBar() {
             const progressBar = document.getElementById('progress-bar');
-            const progress = (currentStep - 1) / (totalSteps - 1) * 100;
+            const progress = Math.min((currentStep - 1) / (totalSteps - 1) * 100, 100);
             progressBar.style.width = `${progress}%`;
         }
 
@@ -198,6 +198,10 @@
                 const completionMessage = document.getElementById('completion-message');
                 if (completionMessage) {
                     completionMessage.style.display = 'block';
+                }
+                const progressContainer = document.getElementById('progress-container');
+                if (progressContainer) {
+                    progressContainer.style.display = 'none';
                 }
             }
             updateProgressBar();
